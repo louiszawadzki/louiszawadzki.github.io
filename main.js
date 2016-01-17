@@ -24,7 +24,7 @@ $(document).ready(function(){
     }
   });
 
-  var theremin = document.getElementById("visuals");
+  var theremin = document.getElementById("container");
   $(theremin).mousemove(function(event){
     // values
     var h = this.clientHeight;

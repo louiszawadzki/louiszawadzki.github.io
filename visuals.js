@@ -269,6 +269,9 @@ function resizeCanvas(canvas) {
   canvas.height = document.body.clientHeight-5;
   gl.viewportWidth = canvas.width;
   gl.viewportHeight = canvas.height;
+  var logos = document.getElementById("logos");
+  var logoPosition = Math.max(0, Math.round((canvas.height-500)/2));
+  logos.style.marginTop=logoPosition + "px";
 }
 function webGLStart() {
     var canvas = document.getElementById("visuals");

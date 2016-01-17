@@ -11,12 +11,25 @@ body, html {
 }
 
 h1, h3, h5 {
-    font-family: 'Corben', cursive;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#logos {
+    margin-top: 250px;
+    font-size: 100px;
     text-align: center;
 }
 
 h1 {
-    font-size: 150px;
+    font-size: 70px;
+    color: #DDD;
 }
 
 h3 {

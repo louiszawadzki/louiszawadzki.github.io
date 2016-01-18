@@ -11,7 +11,7 @@ function setTheremin() {
   gain1 = context.createGain();
   gain2 = context.createGain();
   var gainTot = context.createGain();
-  gainTot.gain.value = 1/2;
+  gainTot.gain.value = 0.4;
 
   // create lowpass filters
   filter1 = context.createBiquadFilter();
@@ -29,9 +29,8 @@ function setTheremin() {
   gain1.connect(gainTot);
   gain2.connect(gainTot);
   gainTot.connect(context.destination);
-  //osc1.start();
-  //osc2.start();
 }
+var started = false;
 //useful functions
 changeGain = function(gainNode, value){
   gainNode.gain.value = Math.max(0, Math.min(1, value));
@@ -39,6 +38,13 @@ changeGain = function(gainNode, value){
 changeFrequency = function(oscillator, value){
   oscillator.frequency.value = value;
 };
+toggleOscillators = function(){
+  if (!started) {
+    osc1.start();
+    osc2.start();
+    started = !started;
+  }
+}
 var harmonics = [0.0, 1.0, 0.06, 0.01, 0.04, 0.1, 0.06, 0.02];
 generateWave = function(value){
   var numHarm = 8;

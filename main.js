@@ -4,6 +4,17 @@ $(document).ready(function(){
   webGLStart();
 
   $(document).keypress(function(e){
+    //toggle help
+    if (event.which == 104) {
+      var helpMenu = document.getElementById("menu");
+      helpMenu.hidden = !(helpMenu.hidden);
+    }
+
+    //starts/stops sound
+    if (event.which == 115) {
+      toggleOscillators();
+    }
+
     // activates tremolo
     if (event.which == 116) {
       effectChangeParam = function (deltaX) {
@@ -17,6 +28,10 @@ $(document).ready(function(){
         changeFrequency(osc2, osc1.frequency.value);
         setBackgroundPulse(0);
       }
+    }
+    // activates reverb
+    if (event.which == 114) {
+      console.log("Todo");
     }
     // effect reset
     if (event.which == 32) {

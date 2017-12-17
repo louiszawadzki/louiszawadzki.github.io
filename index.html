@@ -2,62 +2,12 @@
 <html>
     <head>
         <title>Louis Zawadzki</title>
-        <link href='https://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
-        <link href="style.css" rel="stylesheet"></link>
-    <link rel="icon" type="image/ico" href="favicon.png"></link>
-        <script src="bower_components/jquery/dist/jquery.js"></script>
     </head>
     <body>
-        <div id="container">
-            <canvas id="visuals" width="500" height="500"></canvas>
-            <div id="overlay">
-                <h1>Louis Zawadzki</h1>
-                <div id="logos">
-                    <a href="https://github.com/louiszawadzki"><img src="images/github.png"></img></a> &nbsp;<a href="https://twitter.com/zawadzkil"><img src="images/twitter.png"></img></a>
-                </div>
-                <div id="bottomMessage">press h for help</div>
-            </div>
-            <div id="menu" hidden="true">
-                <div id="controls">
-                CONTROLS <br/>
-                General <br/>
-                s: play sound <br/>
-                scroll x: effect setting <br/>
-                scroll y: volume <br/>
-                space: reset effect <br/>
-                mouse: spectrum <br/>
-                h: hide this <br/>
-                <br/>
-                Effects <br/>
-                t: tremolo <br/>
-                r: reverb <br/>
-                </div>
-            </div>
-        </div>
-
-        <script id="shader-fs" type="x-shader/x-fragment">
-            precision mediump float;
-            varying vec4 vColor;
-            void main(void) {
-                gl_FragColor = vColor;
-            }
-        </script>
-
-        <script id="shader-vs" type="x-shader/x-vertex">
-            attribute vec3 aVertexPosition;
-            attribute vec4 aVertexColor;
-            uniform mat4 uMVMatrix;
-            uniform mat4 uPMatrix;
-            varying vec4 vColor;
-            void main(void) {
-                gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
-                vColor = aVertexColor;
-            }
-        </script>
-        <script type="text/javascript" src="webgl-utils.js"></script>
-        <script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
-        <script src="theremin.js"></script>
-        <script src="visuals.js"></script>
-        <script src="main.js"></script>
+      <div class="title__container">
+        <h1 class="title">Louis Zawadzki</h1>
+      </div>
+      <a class="link link__github" href="https://github.com/louiszawadzki">github</a>
+      <a class="link link__twitter" href="https://twitter.com/zawadzkil">twitter</a>
     </body>
 </html>
